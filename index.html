@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>KY TERWLOU</title>
+    <meta name="description" content="Lire, apprendre et répéter les khassaïdes de Serigne Touba">
+    <meta name="theme-color" content="#0E5A43">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Source+Sans+3:wght@400;600;700&display=swap">
+    <style>
+        :root {
+            box-sizing: border-box;
+            padding-top: env(safe-area-inset-top, 0px);
+            padding-bottom: env(safe-area-inset-bottom, 0px);
+            --bg: #F5F8F5;
+            --card: #fff;
+            --ink: #17231E;
+            --mut: #5E6F67;
+            --g: #0E5A43;
+            --g2: #E1EFE8;
+            --gold: #B8892B;
+            --line: #D5E0DA;
+            --bad: #B3261E
+        }
+
+        @media(prefers-color-scheme:dark) {
+            :root:not([data-theme="light"]) {
+                --bg: #0F1A16;
+                --card: #17261F;
+                --ink: #E8F0EB;
+                --mut: #9DB0A6;
+                --g: #4DBB92;
+                --g2: #1F3A2F;
+                --gold: #E0B04F;
+                --line: #2B4137;
+                --bad: #F2877F
+            }
+        }
+
+        :root[data-theme="dark"] {
+            --bg: #0F1A16;
+            --card: #17261F;
+            --ink: #E8F0EB;
+            --mut: #9DB0A6;
+            --g: #4DBB92;
+            --g2: #1F3A2F;
+            --gold: #E0B04F;
+            --line: #2B4137;
+            --bad: #F2877F
+        }
+
+        html {
+            scroll-padding-top: env(safe-area-inset-top, 0px)
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit
+        }
+
+        html {
+            font-size: var(--fs, 100%)
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--ink);
+            font: 1rem/1.5 "Source Sans 3", system-ui, sans-serif;
+            overflow-x: hidden
+        }
+
+        img,
+        video,
+        iframe,
+        audio {
+            max-width: 100%
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: Amiri, Georgia, serif;
+            margin: 0 0 .5rem;
+            line-height: 1.2
+        }
+
+        h1 {
+            font-size: 2rem
+        }
+
+        h2 {
+            font-size: 1.5rem
+        }
+
+        h3 {
+            font-size: 1.2rem
+        }
+
+        header {
+            background: var(--g);
+            color: #fff;
+            padding: 0 1rem;
+            height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: .6rem;
+            position: sticky;
+            top: 0;
+            z-index: 4
+        }
+
+        header .row {
+            flex-wrap: nowrap;
+            min-width: 0
+        }
+
+        header b {
+            white-space: nowrap
+        }
+
+        header b {
+            font: 700 1.6rem Amiri, serif;
+            letter-spacing: .04em
+        }
+
+        header button {
+            background: transparent;
+            color: #fff;
+            border: 1px solid #ffffff80
+        }
+
+        .logo {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            object-fit: contain;
+            background: #fff;
+            flex: none
+        }
+
+        .ph {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed var(--gold);
+            color: var(--gold);
+            font-size: .7rem;
+            background: transparent
+        }
+
+        nav {
+            display: flex;
+            gap: .2rem;
+            background: var(--card);
+            border-bottom: 1px solid var(--line);
+            overflow-x: auto;
+            padding: 0 .5rem
+        }
+
+        nav button {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            background: none;
+            border: 0;
+            border-bottom: 3px solid transparent;
+            border-radius: 0;
+            color: var(--mut);
+            padding: .8rem .9rem;
+            font-weight: 600;
+            white-space: nowrap
+        }
+
+        nav button.on {
+            color: var(--g);
+            border-color: var(--gold)
+        }
+
+        nav .sh {
+            display: none
+        }
+
+        main {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 1.2rem 1.5rem 9rem
+        }
+
+        @media(min-width:1000px) {
+            nav {
+                position: fixed;
+                top: 68px;
+                left: 0;
+                bottom: 0;
+                width: 230px;
+                flex-direction: column;
+                gap: .3rem;
+                border-right: 1px solid var(--line);
+                border-bottom: 0;
+                padding: 1rem .6rem;
+                overflow-y: auto
+            }
+
+            nav button {
+                border-bottom: 0;
+                border-left: 4px solid transparent;
+                border-radius: 8px;
+                font-size: 1.05rem;
+                text-align: left;
+                width: 100%
+            }
+
+            nav button.on {
+                background: var(--g2);
+                border-left-color: var(--gold)
+            }
+
+            main {
+                margin-left: 230px;
+                max-width: none;
+                padding: 1.5rem 2.5rem 6rem
+            }
+
+            #fm,
+            #main {
+                max-width: 920px
+            }
+
+            #panel {
+                left: 230px
+            }
+        }
+
+        @media(max-width:699px) {
+            nav {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 6;
+                border-top: 2px solid var(--gold);
+                border-bottom: 0;
+                padding: 0 0 env(safe-area-inset-bottom, 0px);
+                gap: 0;
+                justify-content: space-between
+            }
+
+            nav button {
+                flex: 1;
+                min-width: 0;
+                flex-direction: column;
+                gap: 0;
+                padding: .45rem .1rem;
+                border-bottom: 0;
+                border-top: 3px solid transparent;
+                font-size: .68rem;
+                line-height: 1.2;
+                justify-content: center;
+                min-height: 58px
+            }
+
+            nav button.on {
+                border-top-color: var(--gold);
+                background: var(--g2)
+            }
+
+            nav .lg {
+                display: none
+            }
+
+            nav .sh {
+                display: inline
+            }
+
+            nav .ic {
+                font-size: 1.25rem
+            }
+
+            main {
+                padding: 1rem 1rem 8rem
+            }
+
+            #panel {
+                bottom: calc(58px + env(safe-area-inset-bottom, 0px));
+                padding-bottom: .8rem
+            }
+
+            header b {
+                font-size: 1.25rem
+            }
+
+            .logo {
+                width: 38px;
+                height: 38px
+            }
+
+            h1 {
+                font-size: 1.6rem
+            }
+
+            .card {
+                padding: .85rem
+            }
+
+            .row>button:not(.sm),
+            .row>a.btn:not(.sm) {
+                flex: 1 1 auto;
+                justify-content: center
+            }
+
+            input[type=date] {
+                width: 100% !important
+            }
+        }
+
+        @media(min-width:700px) and (max-width:999px) {
+            main {
+                padding: 1.2rem 1.5rem 8rem
+            }
+
+            nav button {
+                padding: .9rem 1rem
+            }
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: .8rem
+        }
+
+        .row {
+            display: flex;
+            gap: .6rem;
+            flex-wrap: wrap;
+            align-items: center
+        }
+
+        .sp {
+            justify-content: space-between
+        }
+
+        .grow {
+            flex: 1;
+            min-width: 150px
+        }
+
+        button,
+        a.btn {
+            font: inherit;
+            cursor: pointer;
+            border-radius: 8px;
+            border: 1px solid var(--g);
+            background: var(--g);
+            color: #fff;
+            padding: .55rem 1rem;
+            min-height: 44px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center
+        }
+
+        button.sec,
+        a.btn.sec {
+            background: transparent;
+            color: var(--g)
+        }
+
+        button.bad {
+            background: transparent;
+            color: var(--bad);
+            border-color: var(--bad)
+        }
+
+        button.sm,
+        a.btn.sm {
+            min-height: 36px;
+            padding: .3rem .7rem;
+            font-size: .92rem
+        }
+
+        :is(button, input, select, textarea, a):focus-visible {
+            outline: 3px solid var(--gold);
+            outline-offset: 2px
+        }
+
+        input,
+        select,
+        textarea {
+            font: inherit;
+            width: 100%;
+            padding: .55rem .7rem;
+            min-height: 44px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--bg);
+            color: var(--ink)
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin: .6rem 0 .2rem
+        }
+
+        label.ck {
+            display: flex;
+            gap: .5rem;
+            align-items: center;
+            font-weight: 400;
+            margin: .2rem 0
+        }
+
+        label.ck input {
+            width: auto;
+            min-height: 0
+        }
+
+        .badge {
+            display: inline-block;
+            padding: .1rem .6rem;
+            border-radius: 99px;
+            background: var(--g2);
+            color: var(--g);
+            font-size: .85rem;
+            font-weight: 600
+        }
+
+        .badge.w {
+            background: #F6E8C4;
+            color: #6B4E0E
+        }
+
+        .mut {
+            color: var(--mut)
+        }
+
+        .empty {
+            text-align: center;
+            color: var(--mut);
+            padding: 1.5rem;
+            border: 2px dashed var(--line);
+            border-radius: 10px;
+            margin-bottom: .8rem
+        }
+
+        .bar {
+            height: 8px;
+            background: var(--g2);
+            border-radius: 9px;
+            overflow: hidden
+        }
+
+        .bar i {
+            display: block;
+            height: 100%;
+            background: var(--g)
+        }
+
+        .grid2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: .8rem
+        }
+
+        .num {
+            font: 700 1.6rem Amiri, serif;
+            color: var(--gold);
+            min-width: 2rem
+        }
+
+        .done {
+            opacity: .65
+        }
+
+        .done .t {
+            text-decoration: line-through
+        }
+
+        #panel {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--card);
+            border-top: 3px solid var(--gold);
+            padding: .8rem 1rem calc(.8rem + env(safe-area-inset-bottom, 0px));
+            z-index: 5;
+            max-height: 80vh;
+            overflow: auto
+        }
+
+        #panel iframe.yt {
+            width: 100%;
+            aspect-ratio: 16/9;
+            border: 0;
+            border-radius: 8px
+        }
+
+        #panel video {
+            width: 100%;
+            max-height: 50vh
+        }
+
+        #panel audio {
+            width: 100%
+        }
+
+        .note {
+            background: #F6E8C4;
+            color: #4B3608;
+            border-radius: 8px;
+            padding: .6rem .9rem;
+            margin-bottom: 1rem;
+            font-size: .92rem
+        }
+
+        .err {
+            background: #FBE3E0;
+            color: #7A1710
+        }
+
+        textarea.code {
+            font-family: ui-monospace, monospace;
+            font-size: .82rem;
+            min-height: 120px
+        }
+
+        .pr {
+            display: none
+        }
+
+        @media print {
+
+            header,
+            nav,
+            #panel,
+            button,
+            .noprint,
+            a.btn,
+            input,
+            select {
+                display: none !important
+            }
+
+            .pr {
+                display: flex;
+                gap: 1rem;
+                align-items: center;
+                border-bottom: 3px solid #B8892B;
+                margin-bottom: 1rem
+            }
+
+            body {
+                background: #fff;
+                color: #000
+            }
+
+            .card {
+                break-inside: avoid
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="row" id="hd"></div>
+        <div class="row" style="flex:none"><button class="sm" onclick="tsize()"
+                aria-label="Agrandir le texte">A+</button><button class="sm" onclick="theme()"
+                aria-label="Changer de thème">Thème</button></div>
+    </header>
+    <nav id="nav"></nav>
+    <main>
+        <div id="fm" role="status"></div>
+        <div id="main"></div>
+    </main>
+    <div id="panel" hidden></div>
+    <script>
+        const $ = s => document.querySelector(s);
+        const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
+        const norm = s => String(s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9 ]/g, '').trim();
+        const uid = () => Math.random().toString(36).slice(2, 10);
+        const today = () => {const d = new Date(); return new Date(d - d.getTimezoneOffset() * 6e4).toISOString().slice(0, 10)};
+        const fmt = d => new Date(d + 'T12:00').toLocaleDateString('fr-FR', {weekday: 'short', day: 'numeric', month: 'short', year: 'numeric'});
+        const DEF = {k: [], a: [], p: [], d: [], s: [], logo: ''}; let S;
+        try {S = JSON.parse(localStorage.getItem('kyt') || 'null') || DEF} catch (e) {S = DEF} S = {...DEF, ...S};
+        const save = () => {try {localStorage.setItem('kyt', JSON.stringify(S))} catch (e) {flash('Enregistrement impossible : espace de stockage plein ou bloqué.')} };
+        try {const t = localStorage.getItem('kyt-th'); if (t) document.documentElement.dataset.theme = t} catch (e) { }
+        function tsize() {const c = ['100%', '115%', '130%']; let i = c.indexOf(document.documentElement.style.getPropertyValue('--fs') || '100%'); i = (i + 1) % 3; document.documentElement.style.setProperty('--fs', c[i]); try {localStorage.setItem('kyt-fs', c[i])} catch (e) { } }
+        try {const f = localStorage.getItem('kyt-fs'); if (f) document.documentElement.style.setProperty('--fs', f)} catch (e) { }
+        function theme() {const r = document.documentElement, dk = r.dataset.theme ? r.dataset.theme == 'dark' : matchMedia('(prefers-color-scheme:dark)').matches; r.dataset.theme = dk ? 'light' : 'dark'; try {localStorage.setItem('kyt-th', r.dataset.theme)} catch (e) { } }
+        // fichiers (IndexedDB)
+        const DBP = new Promise(r => {try {const q = indexedDB.open('kyt', 1); q.onupgradeneeded = () => q.result.createObjectStore('f'); q.onsuccess = () => r(q.result); q.onerror = () => r(null)} catch (e) {r(null)} });
+        async function tx(m, fn) {const db = await DBP; if (!db) throw new Error('Stockage de fichiers indisponible sur ce navigateur.'); return new Promise((ok, ko) => {const t = db.transaction('f', m), r = fn(t.objectStore('f')); t.oncomplete = () => ok(r.result); t.onerror = () => ko(t.error)})}
+        const fput = (id, b) => tx('readwrite', s => s.put(b, id)), fget = id => tx('readonly', s => s.get(id)), fdel = id => id ? tx('readwrite', s => s.delete(id)).catch(() => { }) : 0;
+        async function store(file) {const id = uid(); await fput(id, file); return id}
+        let V = 'home', Q = '', ED = null, SHOW = false, D = null, PD = null, PROP = null, MSG = '', AK = '', AE = null;
+        const K = id => S.k.find(x => x.id == id), KN = id => (K(id) || {name: '(supprimé)'}).name, A = id => S.a.find(x => x.id == id), airsOf = kid => S.a.filter(a => a.kid == kid);
+        const sdone = id => S.s.find(x => x.sid == id), isDone = id => (sdone(id) || {}).st == 'done';
+        const ytId = u => {const m = String(u).match(/(?:v=|youtu\.be\/|embed\/|shorts\/)([\w-]{11})/); return m && m[1]};
+        function flash(t) {const f = $('#fm'); if (f) {f.innerHTML = t ? `<div class="note err">${esc(t)}</div>` : ''; if (t) scrollTo(0, 0)} }
+        const NAVS = [['home', 'Accueil', '🏠', 'Accueil'], ['lib', 'Bibliothèque', '📚', 'Textes'], ['airs', 'Gestion des airs', '🎵', 'Airs'], ['prog', 'Mes programmes', '📅', 'Programmes'], ['dah', 'Dahiras', '👥', 'Dahiras'], ['set', 'Réglages', '⚙️', 'Réglages']];
+        function go(v, x) {V = v; PD = x || null; PROP = null; SHOW = false; ED = null; if (v != 'pform') D = null; render(); scrollTo(0, 0)}
+        const logoImg = c => S.logo ? `<img src="${S.logo}" alt="Logo" class="${c || 'logo'}">` : `<span class="${c || 'logo'} ph" title="Emplacement du logo officiel">Logo</span>`;
+        function render() {
+            $('#hd').innerHTML = logoImg() + '<b>KY TERWLOU</b>';
+            $('#nav').innerHTML = NAVS.map(n => `<button class="${V == n[0] || (V == 'pform' || V == 'pdet' || V == 'recap') && n[0] == 'prog' ? 'on' : ''}" onclick="go('${n[0]}')" aria-label="${n[1]}"><span class="ic" aria-hidden="true">${n[2]}</span><span class="lg">${n[1]}</span><span class="sh">${n[3]}</span></button>`).join('');
+            $('#fm').innerHTML = MSG ? `<div class="note" role="status">${esc(MSG)}</div>` : ''; MSG = '';
+            $('#main').innerHTML = ({home: vHome, lib: vLib, airs: vAirs, prog: vProg, pform: vForm, recap: vRecap, pdet: vDet, dah: vDah, set: vSet}[V])();
+            if (V == 'pform') afterForm();
+        }
+        const empty = (t, b) => `<div class="empty">${t}${b ? '<br><br>' + b : ''}</div>`;
+        function panel(h) {const p = $('#panel'); p.hidden = false; p.innerHTML = h}
+        function closeP() {const p = $('#panel'); p.hidden = true; p.innerHTML = ''}
+        // ---------- ACCUEIL
+        function allSched() {return S.p.filter(p => p.status == 'active').flatMap(p => p.sched.map(e => ({...e, pid: p.id, pn: p.name})))}
+        function prog(p) {return p.sched.length ? Math.round(p.sched.filter(e => isDone(e.id)).length / p.sched.length * 100) : 0}
+        const START = `<div class="card"><h2>Pour commencer</h2><div class="row" style="align-items:stretch"><div class="grow"><span class="num">1</span><br><b>Ajoutez un khassaïde</b><br><span class="mut">Importez son PDF dans la bibliothèque.</span><br><button class="sm" style="margin-top:.5rem" onclick="go('lib')">Ouvrir la bibliothèque</button></div><div class="grow"><span class="num">2</span><br><b>Ajoutez son air</b><br><span class="mut">Audio, vidéo ou lien YouTube.</span><br><button class="sm" style="margin-top:.5rem" onclick="go('airs')">Ajouter un air</button></div><div class="grow"><span class="num">3</span><br><b>Créez un programme</b><br><span class="mut">Choisissez les khassaïdes et les dates.</span><br><button class="sm" style="margin-top:.5rem" onclick="newProg()">Créer un programme</button></div></div><p class="mut" style="margin-bottom:0">Vos données restent privées : elles sont enregistrées sur votre appareil. Le bouton A+ agrandit le texte.</p></div>`;
+        function vHome() {
+            const td = allSched().filter(e => e.date == today());
+            return `<div class="card row">${logoImg('logo')}<div><h1 style="margin:0">Bienvenue sur KY TERWLOU</h1><span class="mut">Lire, apprendre et répéter les khassaïdes de Serigne Touba.</span></div></div>
+ ${(!S.k.length && !S.p.length) ? START : ''}<h2>À réciter aujourd'hui</h2>${td.length ? td.map(rowE).join('') : empty('Rien de prévu aujourd\'hui.', S.k.length ? `<button onclick="newProg()">Créer un programme</button>` : `<button onclick="go('lib')">Ajouter un premier khassaïde</button>`)}`
+        }
+        function rowE(e) {
+            const r = sdone(e.id), st = r ? r.st : ''; const it = (S.p.find(p => p.id == e.pid) || {items: []}).items.find(i => i.kid == e.kid);
+            return `<div class="card ${st == 'done' ? 'done' : ''}"><div class="row sp"><div class="grow"><b class="t">${esc(KN(e.kid))}</b><br><span class="mut">${esc(e.pn || '')}${e.time ? ' · ' + esc(e.time) : ''}</span></div><div class="row">${it && it.aid ? `<button class="sec sm" onclick="playAir('${it.aid}','audio')">Écouter</button>` : ''}
+ <button class="sm ${st == 'done' ? '' : 'sec'}" onclick="mark('${e.id}','done')">${st == 'done' ? 'Effectuée ✓' : 'Marquer effectuée'}</button><button class="sm sec" onclick="mark('${e.id}','partial')">${st == 'partial' ? 'Partielle ✓' : 'Partielle'}</button></div></div></div>`
+        }
+        function mark(id, st) {const i = S.s.findIndex(x => x.sid == id); if (i >= 0 && S.s[i].st == st) S.s.splice(i, 1); else if (i >= 0) S.s[i].st = st; else S.s.push({sid: id, st, at: new Date().toISOString()}); save(); render()}
+        // ---------- BIBLIOTHEQUE
+        function kform() {
+            const k = ED ? K(ED) : {}; return `<div class="card"><h3>${ED ? 'Modifier le khassaïde' : 'Ajouter un khassaïde PDF'}</h3>
+ <label for="kn">Nom du khassaïde</label><input id="kn" value="${esc(k.name)}"><label for="ka">Autres noms (séparés par des virgules)</label><input id="ka" value="${esc((k.aliases || []).join(', '))}">
+ <label for="kf">Fichier PDF ${k.pdf ? '(laisser vide pour conserver « ' + esc(k.pdfName) + ' »)' : ''}</label><input type="file" id="kf" accept="application/pdf,.pdf">
+ <label for="kd">Description (facultatif)</label><textarea id="kd" rows="2">${esc(k.desc)}</textarea><label for="ks">Statut de publication</label><select id="ks"><option value="published" ${k.status == 'published' ? 'selected' : ''}>Publié</option><option value="draft" ${k.status == 'draft' ? 'selected' : ''}>Brouillon</option></select>
+ <div class="row" style="margin-top:.8rem"><button onclick="saveK()">Enregistrer</button><button class="sec" onclick="ED=null;SHOW=false;render()">Annuler</button></div></div>`}
+        async function saveK() {
+            try {
+                const n = $('#kn').value.trim(); if (!n) return flash('Saisissez le nom du khassaïde.');
+                if (S.k.some(k => k.id != ED && norm(k.name) == norm(n))) return flash('Ce khassaïde existe déjà dans la bibliothèque : modifiez sa fiche au lieu d\'en créer une autre.');
+                const f = $('#kf').files[0]; if (f && !/pdf$/i.test(f.name) && f.type != 'application/pdf') return flash('Le fichier doit être un PDF.');
+                let k = ED ? K(ED) : null; if (!k) {k = {id: uid(), aliases: [], added: today()}; S.k.push(k)}
+                if (f) {await fdel(k.pdf); k.pdf = await store(f); k.pdfName = f.name}
+                k.name = n; k.aliases = $('#ka').value.split(',').map(x => x.trim()).filter(Boolean); k.desc = $('#kd').value.trim(); k.status = $('#ks').value; save(); ED = null; SHOW = false; MSG = 'Khassaïde enregistré.'; render()
+            } catch (e) {flash(e.message || 'Échec de l\'enregistrement.')}
+        }
+        function listK() {
+            const q = norm(Q), l = S.k.filter(k => !q || norm(k.name + ' ' + k.aliases.join(' ')).includes(q));
+            if (!S.k.length) return empty('La bibliothèque est vide.', 'Cliquez sur « Ajouter un khassaïde PDF » pour commencer.'); if (!l.length) return empty('Aucun résultat pour « ' + esc(Q) + ' ».');
+            return l.map(k => `<div class="card"><div class="row sp"><div class="grow"><h3>${esc(k.name)}</h3><span class="badge ${k.status == 'published' ? '' : 'w'}">${k.status == 'published' ? 'Publié' : 'Brouillon'}</span> <span class="mut">${airsOf(k.id).length} air(s) · ajouté le ${fmt(k.added)}</span>${k.aliases.length ? `<br><span class="mut">Aussi : ${esc(k.aliases.join(', '))}</span>` : ''}${k.desc ? `<p>${esc(k.desc)}</p>` : ''}</div>
+ <div class="row">${k.pdf ? `<button class="sm" onclick="openPdf('${k.id}')">Lire le PDF</button>` : '<span class="badge w">Pas de PDF</span>'}<button class="sm sec" onclick="ED='${k.id}';render();scrollTo(0,0)">Modifier</button><button class="sm bad" onclick="delK('${k.id}')">Supprimer</button></div></div></div>`).join('')
+        }
+        function vLib() {
+            return `<div class="row sp"><h1>Bibliothèque des khassaïdes</h1>${ED || SHOW ? '' : `<button onclick="SHOW=true;render()">Ajouter un khassaïde PDF</button>`}</div>${ED || SHOW ? kform() : ''}
+ <label for="q">Rechercher par nom</label><input id="q" value="${esc(Q)}" oninput="Q=this.value;$('#list').innerHTML=listK()" placeholder="Nom ou autre orthographe"><div id="list" style="margin-top:.8rem">${listK()}</div>`
+        }
+        async function openPdf(id) {
+            try {
+                const k = K(id), b = await fget(k.pdf); if (!b) return flash('Fichier PDF introuvable.'); const u = URL.createObjectURL(new Blob([b], {type: 'application/pdf'}));
+                panel(`<div class="row sp"><b>${esc(k.name)}</b><span class="row"><a class="btn sm sec" href="${u}" target="_blank" rel="noopener">Ouvrir dans un onglet</a><a class="btn sm sec" href="${u}" download="${esc(k.pdfName || k.name + '.pdf')}">Télécharger</a><button class="sm" onclick="closeP()">Fermer</button></span></div><iframe src="${u}" title="PDF" style="width:100%;height:55vh;border:1px solid var(--line);margin-top:.5rem"></iframe><p class="mut">Si le document ne s'affiche pas sur votre appareil, utilisez « Ouvrir dans un onglet ».</p>`)
+            } catch (e) {flash(e.message)}
+        }
+        async function delK(id) {
+            if (!confirm('Supprimer ce khassaïde, son PDF et ses airs ? Il sera retiré des programmes.')) return; const k = K(id); await fdel(k.pdf); for (const a of airsOf(id)) await delAirFiles(a);
+            S.a = S.a.filter(a => a.kid != id); S.k = S.k.filter(x => x.id != id); S.p.forEach(p => {p.items = p.items.filter(i => i.kid != id); p.sched = p.sched.filter(e => e.kid != id)}); save(); MSG = 'Khassaïde supprimé.'; render()
+        }
+        // ---------- AIRS
+        const delAirFiles = async a => {await fdel(a.audio); await fdel(a.video)};
+        function vAirs() {
+            const a = AE ? A(AE) : {}; const kn = AE ? KN(a.kid) : AK;
+            const form = `<div class="card"><h3>${AE ? 'Modifier l\'air' : 'Ajouter un khassaïde et son air'}</h3>
+ <label for="akn">Nom du khassaïde</label><input id="akn" list="kl" value="${esc(kn)}" oninput="kinfo()"><datalist id="kl">${S.k.map(k => `<option value="${esc(k.name)}">`).join('')}</datalist><div id="ki" class="mut"></div>
+ <label for="akf">PDF du khassaïde (nouveau fichier, si besoin)</label><input type="file" id="akf" accept="application/pdf,.pdf">
+ <div class="grid2"><div><label for="an">Nom de l'air</label><input id="an" value="${esc(a.name)}"></div><div><label for="at">Type de média</label><select id="at"><option value="video" ${a.type == 'video' ? 'selected' : ''}>Vidéo</option><option value="audio" ${a.type == 'audio' ? 'selected' : ''}>Audio</option><option value="both" ${a.type == 'both' ? 'selected' : ''}>Les deux</option></select></div>
+ <div><label for="aau">Fichier audio ${a.audio ? '(vide = conserver)' : ''}</label><input type="file" id="aau" accept="audio/*"></div><div><label for="avf">Fichier vidéo ${a.video ? '(vide = conserver)' : ''}</label><input type="file" id="avf" accept="video/*"></div></div>
+ <label for="ayt">Lien YouTube</label><input id="ayt" value="${esc(a.yt)}" placeholder="https://www.youtube.com/watch?v=..."><label for="ar">Nom du récitant (facultatif)</label><input id="ar" value="${esc(a.reciter)}"><label for="ad">Description (facultatif)</label><textarea id="ad" rows="2">${esc(a.desc)}</textarea>
+ <div class="row" style="margin-top:.8rem"><button onclick="saveAir(false)">Enregistrer</button>${AE ? '' : '<button class="sec" onclick="saveAir(true)">Enregistrer et ajouter un autre air</button>'}<button class="sec" onclick="prevForm()">Prévisualiser</button><button class="sec" onclick="AE=null;AK='';render()">Annuler</button></div></div>`;
+            const list = S.k.filter(k => airsOf(k.id).length).map(k => `<div class="card"><h3>${esc(k.name)}</h3>${airsOf(k.id).map(a => `<div class="row sp" style="margin-bottom:.4rem"><span><b>${esc(a.name)}</b> <span class="badge">${{video: 'Vidéo', audio: 'Audio', both: 'Audio + vidéo'}[a.type]}</span> <span class="mut">${esc(a.reciter || '')}</span></span><span class="row"><button class="sm" onclick="playAir('${a.id}')">Prévisualiser</button><button class="sm sec" onclick="chk('${a.id}')">Vérifier</button><button class="sm sec" onclick="AE='${a.id}';render();scrollTo(0,0)">Modifier</button><button class="sm bad" onclick="delAir('${a.id}')">Supprimer</button></span></div>`).join('')}</div>`).join('');
+            return `<h1>Gestion des airs</h1>${form}<h2>Airs enregistrés</h2>${list || empty('Aucun air enregistré.', 'Utilisez le formulaire ci-dessus : le khassaïde et son air apparaîtront ensuite dans la bibliothèque et dans les programmes.')}`
+        }
+        function kinfo() {const k = S.k.find(x => norm(x.name) == norm($('#akn').value)); $('#ki').textContent = k ? `Khassaïde existant : l'air sera ajouté à cette fiche (${k.pdf ? 'PDF déjà associé' : 'pas encore de PDF'}).` : ($('#akn').value ? 'Nouveau khassaïde : une fiche sera créée.' : '')}
+        async function saveAir(another) {
+            try {
+                const kn = $('#akn').value.trim(), an = $('#an').value.trim(), ty = $('#at').value, yt = $('#ayt').value.trim(), au = $('#aau').files[0], vf = $('#avf').files[0]; const old = AE ? A(AE) : {};
+                if (!kn) return flash('Saisissez le nom du khassaïde.'); if (!an) return flash('Saisissez le nom de l\'air.');
+                if (yt && !ytId(yt)) return flash('Ce lien YouTube n\'est pas valide.');
+                const hasA = au || old.audio, hasV = vf || old.video || yt;
+                if (ty == 'audio' && !hasA) return flash('Ajoutez un fichier audio.'); if (ty == 'video' && !hasV) return flash('Ajoutez une vidéo ou un lien YouTube.'); if (ty == 'both' && !(hasA && hasV)) return flash('Pour « les deux », ajoutez l\'audio et la vidéo (ou le lien).');
+                let k = AE ? K(old.kid) : S.k.find(x => norm(x.name) == norm(kn)), pf = $('#akf').files[0];
+                if (pf && !/pdf$/i.test(pf.name) && pf.type != 'application/pdf') return flash('Le fichier du khassaïde doit être un PDF.');
+                if (!k) {k = {id: uid(), name: kn, aliases: [], desc: '', status: 'published', added: today()}; S.k.push(k)}
+                if (pf) {await fdel(k.pdf); k.pdf = await store(pf); k.pdfName = pf.name}
+                const a = AE ? old : {id: uid(), kid: k.id}; if (!AE) S.a.push(a);
+                if (au) {await fdel(a.audio); a.audio = await store(au)} if (vf) {await fdel(a.video); a.video = await store(vf)}
+                Object.assign(a, {name: an, type: ty, yt, reciter: $('#ar').value.trim(), desc: $('#ad').value.trim()}); if (ty == 'audio') {a.yt = ''; await fdel(a.video); a.video = null}
+                save(); AK = another ? k.name : ''; AE = null; MSG = another ? `Air « ${an} » enregistré. Ajoutez le suivant pour « ${k.name} ».` : 'Khassaïde et air enregistrés.'; render()
+            } catch (e) {flash(e.message || 'Échec de l\'enregistrement.')}
+        }
+        async function delAir(id) {if (!confirm('Supprimer cet air ?')) return; const a = A(id); await delAirFiles(a); S.a = S.a.filter(x => x.id != id); S.p.forEach(p => p.items.forEach(i => {if (i.aid == id) i.aid = ''})); save(); MSG = 'Air supprimé.'; render()}
+        async function chk(id) {
+            const a = A(id); const r = []; try {
+                if (a.yt) r.push(ytId(a.yt) ? 'Lien YouTube : format valide (disponibilité à confirmer en lecture)' : 'Lien YouTube : invalide');
+                if (a.audio) r.push(await fget(a.audio) ? 'Audio : fichier présent' : 'Audio : fichier introuvable'); if (a.video) r.push(await fget(a.video) ? 'Vidéo : fichier présent' : 'Vidéo : fichier introuvable')
+            } catch (e) {r.push(e.message)} MSG = a.name + ' → ' + r.join(' · '); render()
+        }
+        // lecteur
+        function ctl() {return `<div class="row" style="margin-top:.4rem"><label class="ck"><input type="checkbox" onchange="document.querySelectorAll('#panel audio,#panel video').forEach(m=>m.loop=this.checked)"> Boucle</label><select style="width:auto" aria-label="Vitesse" onchange="document.querySelectorAll('#panel audio,#panel video').forEach(m=>m.playbackRate=+this.value)">${[.5, .75, 1, 1.25, 1.5].map(v => `<option ${v == 1 ? 'selected' : ''} value="${v}">${v}×</option>`).join('')}</select></div>`}
+        async function playAir(id, mode) {
+            try {
+                const a = A(id); if (!a) return; let h = '', m = mode;
+                if (m == 'audio' && !a.audio) {m = 'video'}
+                if (m != 'video' && a.audio) {const b = await fget(a.audio); if (b) h += `<audio controls src="${URL.createObjectURL(b)}"></audio>`}
+                else if (a.video) {const b = await fget(a.video); if (b) h += `<video controls src="${URL.createObjectURL(b)}"></video>`}
+                else if (a.yt && ytId(a.yt)) h += `<iframe class="yt" src="https://www.youtube-nocookie.com/embed/${ytId(a.yt)}" title="Vidéo" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe><p class="mut">Vitesse et boucle non disponibles pour YouTube. <a href="${esc(a.yt)}" target="_blank" rel="noopener">Ouvrir sur YouTube</a></p>`;
+                if (!h) return flash('Aucun média lisible pour cet air.');
+                panel(`<div class="row sp"><div><b>${esc(KN(a.kid))}</b> · ${esc(a.name)}<br><span class="mut">${esc(a.reciter || 'Récitant non renseigné')}</span></div><button class="sm" onclick="closeP()">Fermer</button></div>${h}${h.includes('<iframe') ? '' : ctl()}`)
+            } catch (e) {flash(e.message)}
+        }
+        function prevForm() {
+            const au = $('#aau').files[0], vf = $('#avf').files[0], yt = $('#ayt').value.trim(); let h = '';
+            if (au) h += `<audio controls src="${URL.createObjectURL(au)}"></audio>`; if (vf) h += `<video controls src="${URL.createObjectURL(vf)}"></video>`;
+            if (yt) {if (!ytId(yt)) return flash('Ce lien YouTube n\'est pas valide.'); h += `<iframe class="yt" src="https://www.youtube-nocookie.com/embed/${ytId(yt)}" title="Aperçu"></iframe>`}
+            if (!h) return flash('Choisissez un fichier ou un lien à prévisualiser (les médias déjà enregistrés se lisent depuis la liste).');
+            panel(`<div class="row sp"><b>Aperçu avant enregistrement</b><button class="sm" onclick="closeP()">Fermer</button></div>${h}`)
+        }
+        // ---------- PROGRAMMES
+        const PER = {yearly: 'Annuelle', monthly: 'Mensuelle', weekly: 'Hebdomadaire', daily: 'Quotidienne', custom: 'Personnalisée'}, ST = {draft: 'Brouillon', active: 'Actif', paused: 'En pause', completed: 'Terminé', archived: 'Archivé'};
+        function vProg() {
+            return `<div class="row sp"><h1>Mes programmes</h1><button onclick="newProg()">Nouveau programme</button></div>` + (S.p.length ? S.p.map(p => `<div class="card"><div class="row sp"><div class="grow"><h3>${esc(p.name)}</h3><span class="badge">${ST[p.status]}</span> <span class="mut">${p.type == 'dahira' ? 'Dahira' + (p.dahira ? ' : ' + esc(p.dahira) : '') : 'Individuel'} · ${p.items.length} khassaïde(s)</span></div><b>${prog(p)} %</b></div><div class="bar" style="margin:.5rem 0"><i style="width:${prog(p)}%"></i></div>
+ <div class="row"><button class="sm" onclick="go('pdet','${p.id}')">Ouvrir</button><button class="sm sec" onclick="dup('${p.id}')">Dupliquer</button><button class="sm sec" onclick="setSt('${p.id}','${p.status == 'archived' ? 'active' : 'archived'}')">${p.status == 'archived' ? 'Désarchiver' : 'Archiver'}</button><button class="sm bad" onclick="delP('${p.id}')">Supprimer</button></div></div>`).join('') : empty('Aucun programme.', '<button onclick="newProg()">Créer un programme</button>'))
+        }
+        function setSt(id, s) {S.p.find(p => p.id == id).status = s; save(); render()}
+        function dup(id) {const p = JSON.parse(JSON.stringify(S.p.find(x => x.id == id))); p.id = uid(); p.name += ' (copie)'; p.status = 'draft'; p.sched.forEach(e => e.id = uid()); S.p.push(p); save(); MSG = 'Programme dupliqué en brouillon.'; render()}
+        function delP(id) {if (!confirm('Supprimer ce programme ?')) return; S.p = S.p.filter(p => p.id != id); save(); if (V == 'pdet') go('prog'); else render()}
+        function newProg() {D = {items: [], v: {}}; V = 'pform'; render(); scrollTo(0, 0)}
+        const JRS = ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'];
+        function vForm() {
+            const v = D.v || {}; return `<h1>Créer un programme</h1><div class="card"><label for="pn">Nom du programme</label><input id="pn" value="${esc(v.name)}"><div class="grid2">
+ <div><label for="pt">Type</label><select id="pt"><option value="individual">Individuel</option><option value="dahira">Dahira</option></select></div><div><label for="pd">Nom du dahira</label><input id="pd" list="dl" value="${esc(v.dahira)}"><datalist id="dl">${S.d.map(d => `<option value="${esc(d.name)}">`).join('')}</datalist></div>
+ <div><label for="pm">Responsable</label><input id="pm" value="${esc(v.manager)}"></div><div><label for="pp">Période</label><select id="pp">${Object.entries(PER).map(([k, t]) => `<option value="${k}">${t}</option>`).join('')}</select></div>
+ <div><label for="ps">Date de début</label><input type="date" id="ps" value="${v.start || today()}"></div><div><label for="pe">Date de fin</label><input type="date" id="pe" value="${v.end || ''}"></div>
+ <div><label for="po">Objectif de récitation (répétitions)</label><input type="number" min="1" id="po" value="${v.obj || ''}"></div></div>
+ <label>Jours de lecture</label><div class="row">${JRS.map((j, i) => `<label class="ck"><input type="checkbox" class="jr" value="${i}" ${(v.days || [0, 1, 2, 3, 4, 5, 6]).includes(i) ? 'checked' : ''}> ${j}</label>`).join('')}</div><label for="pds">Description (facultatif)</label><textarea id="pds" rows="2">${esc(v.desc)}</textarea></div>
+ <h2>Khassaïdes du programme</h2><div class="card"><label for="pk">Khassaïde de la bibliothèque</label><select id="pk" onchange="pickAirs()"><option value="">Choisir…</option>${S.k.map(k => `<option value="${k.id}">${esc(k.name)}</option>`).join('')}</select><div id="pa" style="margin-top:.5rem"></div></div>
+ ${S.k.length ? '' : empty('La bibliothèque est vide.', '<button onclick="go(\'lib\')">Ajouter un khassaïde</button>')}<h3>Liste du programme</h3><div id="sel"></div>
+ <div class="row" style="margin-top:1rem"><button class="sec" onclick="toRecap(true)">Enregistrer comme brouillon</button><button onclick="toRecap(false)">Créer le programme</button><button class="sec" onclick="go('prog')">Annuler</button></div>`}
+        function afterForm() {const v = D.v || {};['pt', 'pp'].forEach(i => {if (v[i] != null && $('#' + i)) $('#' + i).value = v[i]}); selr()}
+        function pickAirs() {
+            const id = $('#pk').value; if (!id) {$('#pa').innerHTML = ''; return } const l = airsOf(id);
+            $('#pa').innerHTML = (l.length ? l.map((a, i) => `<label class="ck"><input type="radio" name="air" value="${a.id}" ${i == 0 ? 'checked' : ''}> <b>${esc(a.name)}</b> <span class="mut">${esc(a.reciter || '')}</span> <button class="sm sec" onclick="playAir('${a.id}');return false">Aperçu</button></label>`).join('') : '<p class="mut">Aucun air enregistré pour ce khassaïde</p>') + `<button class="sm" style="margin-top:.5rem" onclick="addIt()">Ajouter au programme</button>`
+        }
+        function addIt() {const id = $('#pk').value; if (!id) return; if (D.items.some(i => i.kid == id)) return flash('Ce khassaïde est déjà dans la liste.'); const r = document.querySelector('input[name=air]:checked'); D.items.push({kid: id, aid: r ? r.value : ''}); flash(''); selr()}
+        function selr() {if (!$('#sel')) return; $('#sel').innerHTML = D.items.length ? D.items.map((it, i) => itemRow(D.items, i, 'D.items', 'selr()')).join('') : '<p class="mut">Choisissez un khassaïde et un air, puis ajoutez-les ici.</p>'}
+        function itemRow(arr, i, ref, cb, extra) {const it = arr[i], l = airsOf(it.kid); return `<div class="card row sp"><span class="num">${i + 1}</span><b class="grow">${esc(KN(it.kid))}</b>${l.length ? `<select style="width:auto" aria-label="Air" onchange="${ref}[${i}].aid=this.value;${cb}"><option value="">Air non choisi</option>${l.map(a => `<option value="${a.id}" ${it.aid == a.id ? 'selected' : ''}>${esc(a.name)}</option>`).join('')}</select>` : '<span class="badge w">Aucun air enregistré</span>'}<button class="sm sec" onclick="mvI(${ref},${i},-1,()=>{${cb}})" aria-label="Monter">↑</button><button class="sm sec" onclick="mvI(${ref},${i},1,()=>{${cb}})" aria-label="Descendre">↓</button><button class="sm bad" onclick="${ref}.splice(${i},1);${extra || ''}${cb}">Retirer</button></div>`}
+        function mvI(arr, i, d, cb) {const j = i + d; if (j < 0 || j >= arr.length) return;[arr[i], arr[j]] = [arr[j], arr[i]]; cb()}
+        function readV() {return {name: $('#pn').value.trim(), type: $('#pt').value, dahira: $('#pd').value.trim(), manager: $('#pm').value.trim(), pp: $('#pp').value, start: $('#ps').value, end: $('#pe').value, obj: +$('#po').value || '', desc: $('#pds').value.trim(), days: [...document.querySelectorAll('.jr:checked')].map(x => +x.value)}}
+        function genSched(v, items) {
+            const days = []; for (let d = new Date(v.start + 'T12:00'); d <= new Date(v.end + 'T12:00'); d.setDate(d.getDate() + 1))if (v.days.includes(d.getDay())) days.push(d.toISOString().slice(0, 10));
+            const n = items.length, o = []; if (!days.length || !n) return o; if (n >= days.length) items.forEach((it, i) => o.push({id: uid(), kid: it.kid, date: days[Math.floor(i * days.length / n)]})); else days.forEach((d, j) => o.push({id: uid(), kid: items[j % n].kid, date: d})); return o
+        }
+        function toRecap(draft) {
+            const v = readV(); D.v = v; D.draft = draft;
+            if (!v.name) return flash('Saisissez le nom du programme.'); if (!D.items.length) return flash('Ajoutez au moins un khassaïde.');
+            if (draft) {S.p.push({id: uid(), name: v.name, type: v.type, dahira: v.dahira, manager: v.manager, period: v.pp, start: v.start, end: v.end, obj: v.obj, desc: v.desc, days: v.days, status: 'draft', items: D.items, sched: []}); save(); MSG = 'Brouillon enregistré.'; return go('pdet', S.p[S.p.length - 1].id)}
+            if (!v.start || !v.end || v.end < v.start) return flash('Vérifiez les dates : la fin doit suivre le début.'); if (!v.days.length) return flash('Choisissez au moins un jour de lecture.');
+            D.sched = genSched(v, D.items); if (!D.sched.length) return flash('Aucune date ne correspond à ces jours.'); V = 'recap'; render(); scrollTo(0, 0)
+        }
+        function vRecap() {
+            const v = D.v; return `<h1>Récapitulatif</h1><div class="card"><h3>${esc(v.name)}</h3><p class="mut">${v.type == 'dahira' ? 'Dahira : ' + esc(v.dahira || '—') + ' · ' : ''}${PER[v.pp]} · ${fmt(v.start)} → ${fmt(v.end)}</p></div>
+ ${D.items.map((it, i) => `<div class="card row"><span class="num">${i + 1}</span><div><b>${esc(KN(it.kid))}</b><br><span class="mut">Air : ${it.aid ? esc(A(it.aid).name) : 'non choisi'}</span></div></div>`).join('')}
+ <h3>Calendrier proposé</h3><p>Proposition de répartition : modifiez les dates ou retirez une séance. Rien n'est définitif avant votre confirmation.</p>${D.sched.map((e, i) => `<div class="card row sp"><b class="grow">${esc(KN(e.kid))}</b><input type="date" style="width:170px" value="${e.date}" aria-label="Date" onchange="D.sched[${i}].date=this.value"><button class="sm bad" onclick="D.sched.splice(${i},1);render()">Retirer</button></div>`).join('')}
+ <div class="row"><button onclick="confirmP()">Confirmer et créer le programme</button><button class="sec" onclick="V='pform';render()">Retour</button></div>`}
+        function confirmP() {const v = D.v; const p = {id: uid(), name: v.name, type: v.type, dahira: v.dahira, manager: v.manager, period: v.pp, start: v.start, end: v.end, obj: v.obj, desc: v.desc, days: v.days, status: 'active', items: D.items, sched: D.sched.sort((a, b) => a.date.localeCompare(b.date))}; S.p.push(p); save(); D = null; MSG = 'Programme créé.'; go('pdet', p.id)}
+        // ---------- DETAIL
+        function grp(p, d) {const dt = new Date(d + 'T12:00'); if (p.period == 'yearly') return dt.toLocaleDateString('fr-FR', {month: 'long', year: 'numeric'}); if (p.period == 'monthly' || p.period == 'weekly') {const m = new Date(dt); m.setDate(dt.getDate() - ((dt.getDay() + 6) % 7)); return 'Semaine du ' + m.toLocaleDateString('fr-FR', {day: 'numeric', month: 'long'})} return fmt(d)}
+        function vDet() {
+            const p = S.p.find(x => x.id == PD); if (!p) return vProg();
+            const calHtml = () => {
+                if (!p.sched.length) return empty('Aucun calendrier pour l\'instant.', 'Utilisez « Répartir automatiquement » : vous pourrez modifier la proposition avant de la valider.'); const g = {}; p.sched.forEach(e => (g[grp(p, e.date)] = g[grp(p, e.date)] || []).push(e));
+                return Object.entries(g).map(([t, l]) => `<div class="card"><h3>${esc(t)}</h3>${l.map(e => `<div class="row sp ${isDone(e.id) ? 'done' : ''}" style="margin-bottom:.4rem"><span class="grow t">${esc(KN(e.kid))}</span><input type="date" style="width:160px" value="${e.date}" aria-label="Date" onchange="chDate('${p.id}','${e.id}',this.value)"><button class="sm ${isDone(e.id) ? '' : 'sec'}" onclick="mark('${e.id}','done')">${isDone(e.id) ? 'Fait ✓' : 'Marquer fait'}</button></div>`).join('')}</div>`).join('')
+            };
+            const cards = p.items.map((it, i) => {
+                const a = it.aid && A(it.aid), k = K(it.kid); return `<div class="card"><div class="row"><span class="num">${i + 1}</span><div class="grow"><h3 style="margin:0">${esc(KN(it.kid))}</h3><span class="mut">Air : ${a ? esc(a.name) + (a.reciter ? ' · ' + esc(a.reciter) : '') : '<b>aucun air choisi</b>'}</span></div></div>
+  <div class="row noprint" style="margin:.5rem 0">${k && k.pdf ? `<button class="sm sec" onclick="openPdf('${k.id}')">Lire le document</button>` : '<span class="badge w">PDF non disponible</span>'}${a && (a.audio) ? `<button class="sm" onclick="playAir('${a.id}','audio')">Écouter</button>` : ''}${a && (a.video || a.yt) ? `<button class="sm" onclick="playAir('${a.id}','video')">Regarder la vidéo</button>` : ''}</div>
+  <div class="noprint">${itemRow2(p, i)}</div></div>`
+            }).join('');
+            const add = S.k.filter(k => !p.items.some(i => i.kid == k.id));
+            return `<div class="pr">${logoImg('logo')}<h2 style="margin:0">KY TERWLOU</h2></div><button class="sec sm noprint" onclick="go('prog')">← Mes programmes</button><h1>Détail du programme</h1>
+ <div class="card"><h2>${esc(p.name)}</h2><span class="badge">${ST[p.status]}</span><p>${p.type == 'dahira' ? 'Dahira : ' + esc(p.dahira || '—') + '<br>' : ''}${p.manager ? 'Responsable : ' + esc(p.manager) + '<br>' : ''}Période : ${PER[p.period]} · du ${fmt(p.start)} au ${fmt(p.end)}<br>${p.items.length} khassaïde(s)${p.obj ? ' · objectif : ' + p.obj + ' répétition(s)' : ''}</p>${p.desc ? `<p>${esc(p.desc)}</p>` : ''}<div class="bar"><i style="width:${prog(p)}%"></i></div><b>${prog(p)} %</b> réalisé</div>
+ <div class="row noprint" style="margin-bottom:1rem"><button class="sm sec" onclick="editP('${p.id}')">Modifier</button>${p.status == 'draft' ? `<button class="sm" onclick="setSt('${p.id}','active')">Activer</button>` : ''}<button class="sm sec" onclick="dup('${p.id}')">Dupliquer</button><button class="sm sec" onclick="setSt('${p.id}','${p.status == 'archived' ? 'active' : 'archived'}')">${p.status == 'archived' ? 'Désarchiver' : 'Archiver'}</button><button class="sm sec" onclick="print()">Imprimer / exporter en PDF</button><button class="sm sec" onclick="share('${p.id}')">Partager</button><button class="sm bad" onclick="delP('${p.id}')">Supprimer</button></div><div id="ed"></div><div id="sh"></div>
+ <h2>Khassaïdes à réciter</h2>${cards || empty('Aucun khassaïde dans ce programme.')}
+ <div class="card noprint"><label for="ad2">Ajouter un khassaïde</label><div class="row"><select id="ad2" class="grow"><option value="">Choisir…</option>${add.map(k => `<option value="${k.id}">${esc(k.name)}</option>`).join('')}</select><button onclick="addTo('${p.id}')">Ajouter</button></div></div>
+ <h2>Calendrier</h2><div class="row noprint" style="margin-bottom:.6rem"><button class="sm" onclick="auto('${p.id}')">Répartir automatiquement</button></div>${PROP ? `<div class="card"><h3>Proposition</h3><p>${PROP.length} séance(s) du ${fmt(PROP[0].date)} au ${fmt(PROP[PROP.length - 1].date)}. Appliquer remplace le calendrier actuel.</p><div class="row"><button class="sm" onclick="applyProp('${p.id}')">Appliquer</button><button class="sm sec" onclick="PROP=null;render()">Annuler</button></div></div>` : ''}${calHtml()}`
+        }
+        function itemRow2(p, i) {const it = p.items[i], l = airsOf(it.kid); return `<div class="row">${l.length ? `<select style="width:auto" aria-label="Changer l'air" onchange="p_air('${p.id}',${i},this.value)"><option value="">Air non choisi</option>${l.map(a => `<option value="${a.id}" ${it.aid == a.id ? 'selected' : ''}>${esc(a.name)}</option>`).join('')}</select>` : ''}<button class="sm sec" onclick="p_mv('${p.id}',${i},-1)">↑</button><button class="sm sec" onclick="p_mv('${p.id}',${i},1)">↓</button><button class="sm bad" onclick="p_rm('${p.id}',${i})">Retirer</button></div>`}
+        const PP = id => S.p.find(p => p.id == id);
+        function p_air(id, i, v) {PP(id).items[i].aid = v; save(); render()}
+        function p_mv(id, i, d) {const a = PP(id).items, j = i + d; if (j < 0 || j >= a.length) return;[a[i], a[j]] = [a[j], a[i]]; save(); render()}
+        function p_rm(id, i) {const p = PP(id), k = p.items[i].kid; if (!confirm('Retirer « ' + KN(k) + ' » du programme ?')) return; p.items.splice(i, 1); p.sched = p.sched.filter(e => e.kid != k); save(); render()}
+        function addTo(id) {const k = $('#ad2').value; if (!k) return; const l = airsOf(k); PP(id).items.push({kid: k, aid: l[0] ? l[0].id : ''}); save(); MSG = 'Ajouté. Relancez la répartition du calendrier pour le planifier.'; render()}
+        function chDate(pid, eid, d) {PP(pid).sched.find(e => e.id == eid).date = d; save(); MSG = 'Date modifiée.'; render()}
+        function auto(id) {const p = PP(id); if (!p.items.length) return flash('Ajoutez d\'abord des khassaïdes.'); PROP = genSched({start: p.start, end: p.end, days: p.days || [0, 1, 2, 3, 4, 5, 6]}, p.items); if (!PROP.length) {flash('Aucune date ne correspond.'); return } render()}
+        function applyProp(id) {const p = PP(id); p.sched = PROP; PROP = null; save(); MSG = 'Calendrier appliqué. Vous pouvez encore modifier chaque date.'; render()}
+        function editP(id) {
+            const p = PP(id); $('#ed').innerHTML = `<div class="card"><h3>Modifier le programme</h3><label for="en">Nom</label><input id="en" value="${esc(p.name)}"><label for="ed1">Dahira</label><input id="ed1" value="${esc(p.dahira)}"><label for="em">Responsable</label><input id="em" value="${esc(p.manager)}"><label for="eo">Objectif (répétitions)</label><input id="eo" type="number" min="1" value="${p.obj || ''}"><label for="ede">Description</label><textarea id="ede" rows="2">${esc(p.desc)}</textarea>
+ <div class="row" style="margin-top:.6rem"><button onclick="saveE('${id}')">Enregistrer</button><button class="sec" onclick="render()">Annuler</button></div></div>`
+        }
+        function saveE(id) {const p = PP(id), n = $('#en').value.trim(); if (!n) return flash('Le nom ne peut pas être vide.'); Object.assign(p, {name: n, dahira: $('#ed1').value.trim(), manager: $('#em').value.trim(), obj: +$('#eo').value || '', desc: $('#ede').value.trim()}); save(); MSG = 'Programme modifié.'; render()}
+        function share(id) {const p = PP(id); const t = `${p.name}\n${p.type == 'dahira' ? 'Dahira : ' + p.dahira + '\n' : ''}Du ${fmt(p.start)} au ${fmt(p.end)}\n\n` + p.items.map((it, i) => `${i + 1}. ${KN(it.kid)}${it.aid ? ' (air : ' + A(it.aid).name + ')' : ''}`).join('\n'); $('#sh').innerHTML = `<div class="card"><label for="st">Copiez ce résumé pour l'envoyer à votre dahira</label><textarea id="st" class="code" readonly>${esc(t)}</textarea><p class="mut">Le partage direct avec les membres d'un dahira nécessitera les comptes (version avec serveur).</p></div>`}
+        // ---------- DAHIRAS
+        function vDah() {
+            return `<h1>Dahiras</h1><details class="card"><summary><b>Créer un dahira</b></summary><label for="dn">Nom</label><input id="dn"><label for="dl2">Localité</label><input id="dl2"><label for="dr">Responsable</label><input id="dr"><br><button onclick="addD()">Créer le dahira</button></details>
+ ${S.d.length ? S.d.map(d => {
+                const ps = S.p.filter(p => p.dahira == d.name); return `<div class="card"><h3>${esc(d.name)}</h3><span class="mut">${esc(d.loc || '')}${d.resp ? ' · Responsable : ' + esc(d.resp) : ''} · ${ps.length} programme(s)</span><p><b>Membres :</b> ${d.members.length ? d.members.map(m => `<span class="badge">${esc(m.n)} · ${{admin: 'Responsable', member: 'Membre'}[m.r]}</span>`).join(' ') : '<span class="mut">aucun</span>'}</p>
+ <div class="row"><input id="mn${d.id}" class="grow" placeholder="Nom du membre" aria-label="Nom du membre"><select id="mr${d.id}" style="width:auto" aria-label="Rôle"><option value="member">Membre</option><option value="admin">Responsable</option></select><button class="sm" onclick="addMb('${d.id}')">Ajouter</button><button class="sm bad" onclick="delD('${d.id}')">Supprimer</button></div></div>`
+            }).join('') : empty('Aucun dahira.', 'Créez-en un pour y rattacher vos programmes collectifs.')}`
+        }
+        function addD() {const n = $('#dn').value.trim(); if (!n) return flash('Saisissez le nom du dahira.'); S.d.push({id: uid(), name: n, loc: $('#dl2').value.trim(), resp: $('#dr').value.trim(), members: []}); save(); MSG = 'Dahira créé.'; render()}
+        function addMb(id) {const n = $('#mn' + id).value.trim(); if (!n) return; S.d.find(d => d.id == id).members.push({n, r: $('#mr' + id).value}); save(); render()}
+        function delD(id) {if (confirm('Supprimer ce dahira ?')) {S.d = S.d.filter(d => d.id != id); save(); render()} }
+        // ---------- REGLAGES
+        function vSet() {
+            return `<h1>Réglages</h1><div class="card"><h3>Identité visuelle</h3><div class="row">${logoImg('logo')}<span class="mut">${S.logo ? 'Logo importé.' : 'Emplacement réservé : aucun logo officiel n\'est inclus. Importez le fichier officiel dès qu\'il est disponible.'}</span></div>
+ <label for="lg">Importer ou remplacer le logo (image)</label><input type="file" id="lg" accept="image/*" onchange="setLogo(this.files[0])">${S.logo ? '<button class="sm bad" style="margin-top:.5rem" onclick="S.logo=\'\';save();render()">Retirer le logo</button>' : ''}</div>
+ <div class="card"><h3>Mes données</h3><div class="note">Les données et fichiers sont enregistrés sur cet appareil uniquement. La sauvegarde ci-dessous contient les informations (fiches, airs, programmes), pas les fichiers PDF, audio et vidéo.</div><div class="row"><button class="sec sm" onclick="exp()">Afficher la sauvegarde</button><button class="sec sm" onclick="imp()">Restaurer depuis le texte</button></div><div id="bk"></div></div>`}
+        function setLogo(f) {if (!f) return; const r = new FileReader(); r.onload = () => {const im = new Image(); im.onload = () => {const c = document.createElement('canvas'), s = Math.min(1, 256 / Math.max(im.width, im.height)); c.width = im.width * s; c.height = im.height * s; c.getContext('2d').drawImage(im, 0, 0, c.width, c.height); S.logo = c.toDataURL('image/png'); save(); MSG = 'Logo enregistré.'; render()}; im.onerror = () => flash('Image illisible.'); im.src = r.result}; r.readAsDataURL(f)}
+        function exp() {$('#bk').innerHTML = `<label for="bt">Copiez ce texte pour sauvegarder</label><textarea id="bt" class="code" readonly>${esc(JSON.stringify(S))}</textarea>`}
+        function imp() {$('#bk').innerHTML = `<label for="bt">Collez une sauvegarde</label><textarea id="bt" class="code"></textarea><br><button onclick="doImp()">Restaurer</button>`}
+        function doImp() {try {const o = JSON.parse($('#bt').value); if (!Array.isArray(o.k) || !Array.isArray(o.p)) throw 0; S = {...DEF, ...o}; save(); MSG = 'Données restaurées (les fichiers joints ne sont pas inclus).'; render()} catch (e) {flash('Texte invalide : rien n\'a été restauré.')} }
+        render();
+    </script>
+</body>
+
+</html>
